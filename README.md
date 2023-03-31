@@ -1,14 +1,16 @@
-# Scaffold-Eth 2
+# Canto Starter Kit <<>> SE-2
 
-⚠️ This project is currently under active development. Things might break. Feel free to check the open issues & create new ones.
+Ready to take your dApp development on Canto to the next level? Look no further than Canto StarterKit ! Our pre-configured kit makes it a breeze to run seamlessly on Canto and Canto testnets. Let Canto Starter Kit handle the heavy lifting so you can focus on unleashing your creativity and taking the dApp world by storm!
 
-Scaffold-Eth 2 is an open-source toolkit for building decentralized applications (dapps) on the Ethereum blockchain. It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
+It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
 
-It's a new version of [scaffold-eth](https://github.com/scaffold-eth/scaffold-eth/tree/master) with its core functionality. Built using NextJS, RainbowKit, Hardhat, Wagmi and Typescript.
+Built using NextJS, RainbowKit, Hardhat, Redstone, Wagmi and Typescript.
 
 - ✅ **Contract Component**: Edit and test Solidity smart contracts on your frontend.
 - 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
 - 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
+- 📜 **Interact with all the Canto contracts through one page locally
+- 🧱 **Custom hooks / components / util function like fetching price from readstone
 
 ## Contents
 
@@ -31,30 +33,27 @@ Before you begin, you need to install the following tools:
 
 ## Quickstart
 
-To get started with Scaffold-Eth 2, follow the steps below:
+To get started with Canto Starter Kit, follow the steps below:
 
 1. Clone this repo & install dependencies
 
 ```
-git clone https://github.com/scaffold-eth/se-2.git
-cd se-2
+git clone https://github.com/technophile-04/Canto-x-Se-2
+cd Canto-x-Se-2
 yarn install
 ```
 
-2. Run a local network in the first terminal:
-
+2. Rename `.env.example` to `.env` in `packages/hardhat` and fill the required keys which has some [`cantoTestnet` ETH](https://docs.canto.io/evm-development/testnet#faucet-instructions).
 ```
-yarn chain
+DEPLOYER_PRIVATE_KEY=1234 <- your private key with cantoTestnet eth
 ```
 
-This command starts a local Ethereum network using Hardhat. The network runs on your local machine and can be used for testing and development. You can customize the network configuration in `hardhat.config.js`.
-
-3. On a second terminal, deploy the test contract:
+3. To deploy the NFT test contract with [turnstile](https://docs.canto.io/evm-development/contract-secured-revenue) example to cantoTestnet :
 
 ```
 yarn deploy
 ```
-This command deploys a test smart contract to the local network. The contract is located in `packages/hardhat/contracts` and can be modified to suit your needs. The `yarn deploy` command uses the deploy script located in `packages/hardhat/deploy` to deploy the contract to the network. You can also customize the deploy script.
+This command deploys a test smart contract to the local network. The contract is located in `packages/hardhat/contracts/YourContract.sol` and can be modified to suit your needs. The `yarn deploy` command uses the deploy script located in `packages/hardhat/deploy` to deploy the contract to the `cantoTestnet` network. You can also customize the deploy script and network.
 
 4. On a third terminal, start your NextJS app:
 
@@ -63,51 +62,26 @@ yarn start
 ```
 Visit your app on: `http://localhost:3000`. You can interact with your smart contract using the contract component or the example ui in the frontend.
 
-Run smart contract test with `yarn hardhat:test`
 
 - Edit your smart contract `YourContract.sol` in `packages/hardhat/contracts`
 - Edit your frontend in `packages/nextjs/pages`
 - Edit your deployment scripts in `packages/hardhat/deploy`
 
-## Deploying your Smart Contracts to a Live Network
+## Deploying your Smart Contracts to a Canto Mainnet
 Once you are ready to deploy your smart contracts, there are a few things you need to adjust.
 
 1. Select the network
 
-By default, ```yarn deploy``` will deploy the contract to the local network. You can change the defaultNetwork in `packages/hardhat/hardhat.config.js.` You could also simply run ```yarn deploy --network target_network``` to deploy to another network.
+By default, ```yarn deploy``` will deploy the contract to the cantoTestnet. You can change the `defaultNetwork` key in `packages/hardhat/hardhat.config.ts.` You could also simply run ```yarn deploy --network canto``` to deploy to Canto mainnet network.
 
-Check the `hardhat.config.js` for the networks that are pre-configured. You can also add other network settings to the `hardhat.config.js file`. Here are the [Alchemy docs](https://docs.alchemy.com/docs/how-to-add-alchemy-rpc-endpoints-to-metamask) for information on specific networks.
+Check the `hardhat.config.ts` for the networks that are pre-configured. You can also add other network settings to the `hardhat.config.ts file`. 
 
-Example: To deploy the contract to the Sepolia network, run the command below:
-```
-yarn deploy --network sepolia
-```
+2. Verify your smart contract
 
-2. Generate a new account or add one to deploy the contract(s) from. Additionally you will need to add your Alchemy API key. Rename `.env.example` to `.env` and fill the required keys.
+You can verify your smart contract on Canto by running:
 
 ```
-ALCHEMY_API_KEY="",
-DEPLOYER_PRIVATE_KEY=""
-```
-
-The deployer account is the account that will deploy your contracts. Additionally, the deployer account will be used to execute any function calls that are part of your deployment script.
-
-You can generate a random account / private key with ```yarn generate``` or add the private key of your crypto wallet. ```yarn generate``` will create a random account and add the DEPLOYER_PRIVATE_KEY to the .env file. You can check the generated account with ```yarn account```.
-
-3. Deploy your smart contract(s)
-
-Run the command below to deploy the smart contract to the target network. Make sure to have some funds in your deployer account to pay for the transaction.
-
-```
-yarn deploy --network network_name
-```
-
-4. Verify your smart contract
-
-You can verify your smart contract on Etherscan by running:
-
-```
-yarn verify --network network_name
+yarn verify --network canto
 ```
 
 ## Deploying your NextJS App
@@ -146,10 +120,4 @@ yarn vercel:yolo
 We have github workflow setup checkout `.github/workflows/lint.yaml` which runs types and lint error checks every time code is __pushed__ to `main` branch or __pull request__ is made to `main` branch
 
 To disable it, **delete `.github` directory**
-
-## Contributing to Scaffold-Eth 2
-
-We welcome contributions to Scaffold-Eth 2!
-
-Please see [CONTRIBUTING.MD](https://github.com/scaffold-eth/se-2/blob/master/CONTRIBUTING.md) for more information and guidelines for contributing to Scaffold-Eth 2.
 
