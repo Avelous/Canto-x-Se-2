@@ -10,7 +10,7 @@ import "hardhat/console.sol";
  * A ERC721 smart contract that allows changing a state variable of the contract and tracking the changes
  * It is also able to call the functions of the turnstile contract
  * It also allows the owner to withdraw the Ether in the contract
- * @author BuidlGuidl
+ * @author CantoStarterTeam
  */
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";

@@ -1,7 +1,7 @@
 import Head from "next/head";
 import Link from "next/link";
 import type { NextPage } from "next";
-import { BugAntIcon, SparklesIcon, BuildingStorefrontIcon } from "@heroicons/react/24/outline";
+import { BugAntIcon, BuildingStorefrontIcon, SparklesIcon } from "@heroicons/react/24/outline";
 
 const Home: NextPage = () => {
   return (
@@ -24,6 +24,12 @@ const Home: NextPage = () => {
           <p className="text-center text-lg">
             Edit your smart contract <code className="italic bg-base-300 text-base font-bold">YourContract.sol</code> in{" "}
             <code className="italic bg-base-300 text-base font-bold">packages/hardhat/contracts</code>
+          </p>
+          <p className="text-center text-lg">
+            {" "}
+            <Link href="https://github.com/technophile-04/Canto-x-Se-2" target="_blank" passHref className="link">
+              Fork Me
+            </Link>
           </p>
         </div>
 

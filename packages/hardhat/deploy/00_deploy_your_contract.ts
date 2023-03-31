@@ -32,21 +32,21 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
     autoMine: true,
   });
 
-  // // Get the deployed contract
-  // const yourContract = await hre.ethers.getContract("YourContract", deployer);
+  // Get the deployed contract
+  const yourContract = await hre.ethers.getContract("YourContract", deployer);
 
-  // // Register contract to turnstile
-  // console.log("Registering contract to turnstile...")
-  // await yourContract.registerToTurnstile(yourContract.address);
-  // console.log("Registered to turnstile successfully!!!")
+  // Register contract to turnstile
+  console.log("Registering contract to turnstile...")
+  await yourContract.registerToTurnstile(yourContract.address);
+  console.log("Registered to turnstile successfully!!!")
 
-  // // Mint some nfts abd accrue some fees
-  // for (let i = 1; 1 < 100; i++) {
-  //   console.log(`Minting Nft number ${i} ...`);
-  //   const mintTx = await yourContract.mintNft();
-  //   mintTx.wait();
-  //   console.log(`Minted Nft Successfully!!!`);
-  // }
+  // Mint some nfts abd accrue some fees
+  for (let i = 1; 1 < 100; i++) {
+    console.log(`Minting Nft number ${i} ...`);
+    const mintTx = await yourContract.mintNft();
+    mintTx.wait();
+    console.log(`Minted Nft Successfully!!!`);
+  }
 };
 
 export default deployYourContract;
