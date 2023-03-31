@@ -29,6 +29,7 @@ export const displayTxResult = (
     return asText ? (
       displayContent
     ) : (
+      // @ts-expect-error
       <Address address={displayContent} blockExplorer={configuredChain.blockExplorers.etherscan.url} />
     );
   }

@@ -36,12 +36,12 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
   const yourContract = await hre.ethers.getContract("YourContract", deployer);
 
   // Register contract to turnstile
-  console.log("Registering contract to turnstile...")
+  console.log("Registering contract to turnstile...");
   await yourContract.registerToTurnstile(yourContract.address);
-  console.log("Registered to turnstile successfully!!!")
+  console.log("Registered to turnstile successfully!!!");
 
   // Mint some nfts abd accrue some fees
-  for (let i = 1; 1 < 100; i++) {
+  for (let i = 0; i < 5; i++) {
     console.log(`Minting Nft number ${i} ...`);
     const mintTx = await yourContract.mintNft();
     mintTx.wait();

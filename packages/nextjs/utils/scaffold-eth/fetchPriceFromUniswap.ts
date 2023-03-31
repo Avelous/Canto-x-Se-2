@@ -18,10 +18,10 @@ export const fetchPriceFromUniswap = async (provider: Provider): Promise<number>
 export const fetchCantoPriceFromRedStone = async (): Promise<number> => {
   try {
     const price = await redstone.getPrice("CANTO");
-    const cantoPrice = parseFloat(price.value.toFixed(4))
-    return cantoPrice
+    const cantoPrice = parseFloat(price.value.toFixed(4));
+    return cantoPrice;
   } catch (error) {
     console.error("useEthPrice - Error fetching CANTO price from Redstone: ", error);
     return 0;
   }
-}
+};

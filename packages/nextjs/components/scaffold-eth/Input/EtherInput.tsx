@@ -42,7 +42,7 @@ function displayValueToEtherValue(usdMode: boolean, displayValue: string, ethPri
  */
 export const EtherInput = ({ value, name, placeholder, onChange }: CommonInputProps) => {
   const [transitoryDisplayValue, setTransitoryDisplayValue] = useState<string>();
-  const ethPrice = useAppStore(state => state.ethPrice);
+  const ethPrice = useAppStore(state => state.cantoPrice);
   const [usdMode, setUSDMode] = useState(false);
 
   // The displayValue is derived from the ether value that is controlled outside of the component

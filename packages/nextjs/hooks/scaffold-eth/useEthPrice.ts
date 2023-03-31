@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useInterval } from "usehooks-ts";
 import { useProvider } from "wagmi";
-import { fetchPriceFromUniswap, fetchCantoPriceFromRedStone } from "~~/utils/scaffold-eth";
+import { fetchCantoPriceFromRedStone } from "~~/utils/scaffold-eth";
 
 const enablePolling = false;
 const pollingTime = process.env.NEXT_PUBLIC_RPC_POLLING_INTERVAL
@@ -27,7 +27,7 @@ export const useEthPrice = () => {
   // Get the price of ETH from Uniswap at a given interval
   useInterval(
     async () => {
-      const price = await fetchCantoPriceFromRedStaone();
+      const price = await fetchCantoPriceFromRedStone();
       setEthPrice(price);
     },
     enablePolling ? pollingTime : null,

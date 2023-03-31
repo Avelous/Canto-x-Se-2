@@ -84,6 +84,7 @@ export const ContractUI = ({ contractName, className = "", isExternalContract }:
             <div className="flex">
               <div className="flex flex-col gap-1">
                 <span className="font-bold">{contractName}</span>
+                {/* @ts-expect-error */}
                 <Address address={contractAddress} blockExplorer={configuredChain.blockExplorers.etherscan.url} />
                 <div className="flex gap-1 items-center">
                   <span className="font-bold text-sm">Balance:</span>

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Address, AddressInput } from "../scaffold-eth";
 import { CopyIcon } from "./assets/CopyIcon";
 import { DiamondIcon } from "./assets/DiamondIcon";
 import { HareIcon } from "./assets/HareIcon";
@@ -8,6 +9,7 @@ import { useScaffoldContractWrite } from "~~/hooks/scaffold-eth";
 export const ContractInteraction = () => {
   const [visible, setVisible] = useState(true);
   const [newGreeting, setNewGreeting] = useState("");
+  const [inputAddress, setInputAddress] = useState("");
 
   const { writeAsync, isLoading } = useScaffoldContractWrite("YourContract", "setGreeting", [newGreeting], "0.01");
 
@@ -42,6 +44,24 @@ export const ContractInteraction = () => {
           </button>
         </div>
 
+        <div className="flex flex-col mt-6 px-7 py-8 bg-base-200 opacity-80 rounded-2xl shadow-lg border-2 border-primary">
+          <span className="text-4xl sm:text-6xl text-black">Useful Components</span>
+
+          <div className="mt-8 flex flex-col gap-2 sm:gap-5">
+            <div className="flex flex-col flex-grow">
+              <span className="text-3xl  text-black mb-2">Address Input</span>
+              <div className="flex-1 w-[70%]">
+                <AddressInput value={inputAddress} onChange={value => setInputAddress(value)} />
+              </div>
+            </div>
+            <div className="flex flex-col flex-grow">
+              <span className="text-3xl  text-black mb-2">Address Component</span>
+              <div className="flex-1 w-[50%]">
+                <Address address={"0x60583563D5879C2E59973E5718c7DE2147971807"} />
+              </div>
+            </div>
+          </div>
+        </div>
         <div className="flex flex-col mt-6 px-7 py-8 bg-base-200 opacity-80 rounded-2xl shadow-lg border-2 border-primary">
           <span className="text-4xl sm:text-6xl text-black">Set a Greeting_</span>
 

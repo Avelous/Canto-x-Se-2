@@ -3,8 +3,9 @@ import { ethers } from "ethers";
 import { isAddress } from "ethers/lib/utils";
 import Blockies from "react-blockies";
 import { CopyToClipboard } from "react-copy-to-clipboard";
-import { useEnsAvatar, useEnsName } from "wagmi";
+import { useChainId, useEnsAvatar, useEnsName } from "wagmi";
 import { CheckCircleIcon, DocumentDuplicateIcon } from "@heroicons/react/24/outline";
+import { cantoMainnet, cantoTestnet } from "~~/services/web3/CantoChains";
 
 const blockExplorerLink = (address: string, blockExplorer?: string) =>
   `${blockExplorer || "https://etherscan.io/"}address/${address}`;
@@ -32,6 +33,8 @@ export const Address = ({ address, blockExplorer, disableAddressLink, format }: 
     cacheTime: 30_000,
   });
 
+  const chainId = useChainId();
+
   // We need to apply this pattern to avoid Hydration errors.
   useEffect(() => {
     setEns(fetchedEns);
@@ -57,7 +60,14 @@ export const Address = ({ address, blockExplorer, disableAddressLink, format }: 
     return <span className="text-error">Wrong address</span>;
   }
 
-  const explorerLink = blockExplorerLink(address, blockExplorer);
+  const explorerLink = blockExplorerLink(
+    address,
+    blockExplorer
+      ? blockExplorer
+      : chainId === 7700
+      ? cantoMainnet.blockExplorers?.default.url
+      : cantoTestnet.blockExplorers?.default.url,
+  );
   let displayAddress = address?.slice(0, 5) + "..." + address?.slice(-4);
 
   if (ens) {
