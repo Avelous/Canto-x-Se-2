@@ -12,7 +12,7 @@ Built using NextJS, RainbowKit, Hardhat, Redstone, Wagmi and Typescript.
 
 - ✅ **Contract Component**: Edit and test Solidity smart contracts on your frontend.
 - 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
-- 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
+- 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Canto network.
 - 📜 **Interact with all the Canto contracts through one page locally**
 - 🧱 **Custom hooks / components / util function like fetching price from readstone**
 
@@ -37,8 +37,17 @@ Before you begin, you need to install the following tools:
 - [Git](https://git-scm.com/downloads)
 
 ## Overview 
-Canto Starter kit is fork of [SE-2](https://github.com/scaffold-eth/se-2) so it has all the power of [SE-2](https://github.com/scaffold-eth/se-2) along with some great addtional tools specific to Canot ecosystem. 
+The main aim of Canto Starter Kit is to easily onboard developers to Canto ecosystem by making them worry less about configuring stuff to get started and focus more on building products and leveraging the powers which Canto offers. 
 
+Its is a full-stack starter kit using `hardhat` for writing contracts and `NextJs` for fronent. 
+
+You just need to configure `.env` files and your full DApp gets configured for that network wihout you needing to change anyting else. 
+
+Eg: In `packages/nextjs/.env.development` if you configure `NETWORK=canto` now whenver you do transactions it will it will hint you to Canot Mainnet blockexplore instead of testnet explorer, similarly vice versa. 
+
+Even the deployed Canto contracts which you can interact thought UI like [cUSDC](https://docs.canto.io/evm-development/contract-addresses) will change based on this `.env` 
+
+Canto Starter kit is fork of [SE-2](https://github.com/scaffold-eth/se-2) so it has all the power of [SE-2](https://github.com/scaffold-eth/se-2) along with some great addtional tools specific to Canot ecosystem. 
 
 ## Quickstart
 
