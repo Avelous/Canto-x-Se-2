@@ -141,4 +141,4 @@ We have github workflow setup checkout `.github/workflows/lint.yaml` which runs 
 
 To disable it, **delete `.github` directory**
 
-Generated from SE-2](https://github.com/scaffold-eth/se-2) ❤️
+Generated from [SE-2](https://github.com/scaffold-eth/se-2) ❤️
