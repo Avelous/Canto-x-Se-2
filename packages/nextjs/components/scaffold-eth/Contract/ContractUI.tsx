@@ -10,28 +10,33 @@ import {
   getContractVariablesAndNoParamsReadMethods,
   getContractWriteMethods,
 } from "~~/components/scaffold-eth";
-import { useDeployedContractInfo, useNetworkColor } from "~~/hooks/scaffold-eth";
+import { useDeployedContractInfo, useExternalContractInfo, useNetworkColor } from "~~/hooks/scaffold-eth";
 import { getTargetNetwork } from "~~/utils/scaffold-eth";
 
 type TContractUIProps = {
   contractName: string;
   className?: string;
+  isExternalContract?: boolean;
 };
 
 /**
  * UI component to interface with deployed contracts.
  **/
-export const ContractUI = ({ contractName, className = "" }: TContractUIProps) => {
+export const ContractUI = ({ contractName, className = "", isExternalContract }: TContractUIProps) => {
   const configuredChain = getTargetNetwork();
+  console.log(configuredChain);
   const provider = useProvider();
   const [refreshDisplayVariables, setRefreshDisplayVariables] = useState(false);
 
   let contractAddress = "";
   let contractABI = [];
   const { data: deployedContractData, isLoading: deployedContractLoading } = useDeployedContractInfo(contractName);
+  const { data: externalContractData, isLoading: externalContractLoading } = useExternalContractInfo(contractName);
   const networkColor = useNetworkColor();
   if (deployedContractData) {
     ({ address: contractAddress, abi: contractABI } = deployedContractData);
+  } else if (isExternalContract && externalContractData) {
+    ({ address: contractAddress, abi: contractABI } = externalContractData);
   }
 
   const contract: Contract | null = useContract({
@@ -55,7 +60,7 @@ export const ContractUI = ({ contractName, className = "" }: TContractUIProps) =
     [contract, displayedContractFunctions],
   );
 
-  if (deployedContractLoading) {
+  if (deployedContractLoading || externalContractLoading) {
     return (
       <div className="mt-14">
         <Spinner width="50px" height="50px" />
@@ -79,7 +84,7 @@ export const ContractUI = ({ contractName, className = "" }: TContractUIProps) =
             <div className="flex">
               <div className="flex flex-col gap-1">
                 <span className="font-bold">{contractName}</span>
-                <Address address={contractAddress} />
+                <Address address={contractAddress} blockExplorer={configuredChain.blockExplorers.etherscan.url} />
                 <div className="flex gap-1 items-center">
                   <span className="font-bold text-sm">Balance:</span>
                   <Balance address={contractAddress} className="px-0 h-1.5 min-h-[0.375rem]" />

@@ -1,5 +1,6 @@
 import { Fetcher, Route, Token, WETH } from "@uniswap/sdk";
 import { Provider } from "@wagmi/core";
+import redstone from "redstone-api";
 
 export const fetchPriceFromUniswap = async (provider: Provider): Promise<number> => {
   try {
@@ -13,3 +14,14 @@ export const fetchPriceFromUniswap = async (provider: Provider): Promise<number>
     return 0;
   }
 };
+
+export const fetchCantoPriceFromRedStone = async (): Promise<number> => {
+  try {
+    const price = await redstone.getPrice("CANTO");
+    const cantoPrice = parseFloat(price.value.toFixed(4))
+    return cantoPrice
+  } catch (error) {
+    console.error("useEthPrice - Error fetching CANTO price from Redstone: ", error);
+    return 0;
+  }
+}
