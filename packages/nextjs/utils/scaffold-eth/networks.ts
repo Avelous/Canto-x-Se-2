@@ -1,6 +1,6 @@
 import { Network } from "@ethersproject/networks";
 import * as chains from "wagmi/chains";
-import { cantoTestnet } from "~~/services/web3/CantoTestnetChain";
+import { cantoMainnet, cantoTestnet } from "~~/services/web3/CantoChains";
 
 export type TChainAttributes = {
   // color | [lightThemeColor, darkThemeColor]
@@ -86,6 +86,10 @@ export const getTargetNetwork = () => {
 
   if (network === "cantoTestnet") {
     return cantoTestnet;
+  }
+
+  if (network === "canto") {
+    return cantoMainnet;
   }
 
   if (!network || !chains[network]) {

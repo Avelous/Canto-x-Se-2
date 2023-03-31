@@ -16,13 +16,13 @@ import "~~/styles/globals.css";
 
 const ScaffoldEthApp = ({ Component, pageProps }: AppProps) => {
   const price = useEthPrice();
-  const setEthPrice = useAppStore(state => state.setEthPrice);
+  const setCantoPrice = useAppStore(state => state.setCantoPrice);
 
   useEffect(() => {
     if (price > 0) {
-      setEthPrice(price);
+      setCantoPrice(price);
     }
-  }, [setEthPrice, price]);
+  }, [setCantoPrice, price]);
 
   return (
     <WagmiConfig client={wagmiClient}>
