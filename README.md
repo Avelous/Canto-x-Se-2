@@ -4,6 +4,8 @@
 |:---:|:---:|
 |![Screenshot 2023-04-01 at 1 46 18 AM](https://user-images.githubusercontent.com/80153681/229222279-bc552dd2-eaef-499e-812b-fb9dce71130c.jpg)|![Screenshot 2023-04-01 at 1 49 55 AM](https://user-images.githubusercontent.com/80153681/229222459-fb0d939d-5ef7-469d-8ef4-ac6910652779.jpg)|
 
+Live : https://canto-chi.vercel.app
+
 Ready to take your dApp development on Canto to the next level? Look no further than Canto StarterKit ! Our pre-configured kit makes it a breeze to run seamlessly on Canto and Canto testnets. Let Canto Starter Kit handle the heavy lifting so you can focus on unleashing your creativity and taking the dApp world by storm!
 
 It's designed to make it easier for developers to create and deploy smart contracts and build user interfaces that interact with those contracts.
@@ -139,3 +141,4 @@ We have github workflow setup checkout `.github/workflows/lint.yaml` which runs 
 
 To disable it, **delete `.github` directory**
 
+Generated from SE-2](https://github.com/scaffold-eth/se-2) ❤️
