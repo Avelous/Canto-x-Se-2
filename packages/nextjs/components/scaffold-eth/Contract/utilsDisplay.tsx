@@ -3,8 +3,11 @@ import { TransactionResponse } from "@ethersproject/providers";
 import { formatUnits } from "@ethersproject/units";
 import { BigNumber } from "ethers";
 import { Address } from "~~/components/scaffold-eth";
+import { getTargetNetwork } from "~~/utils/scaffold-eth";
 
 type DisplayContent = string | number | BigNumber | Record<string, any> | TransactionResponse | undefined | unknown;
+
+const configuredChain = getTargetNetwork();
 
 export const displayTxResult = (
   displayContent: DisplayContent | DisplayContent[],
@@ -23,7 +26,11 @@ export const displayTxResult = (
   }
 
   if (typeof displayContent === "string" && displayContent.indexOf("0x") === 0 && displayContent.length === 42) {
-    return asText ? displayContent : <Address address={displayContent} />;
+    return asText ? (
+      displayContent
+    ) : (
+      <Address address={displayContent} blockExplorer={configuredChain.blockExplorers.etherscan.url} />
+    );
   }
 
   if (displayContent && Array.isArray(displayContent)) {

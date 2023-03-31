@@ -1838,6 +1838,7 @@ __metadata:
     react-dom: ^18.2.0
     react-fast-marquee: ^1.3.5
     react-hot-toast: ^2.4.0
+    redstone-api: ^0.4.11
     tailwindcss: ^3.1.8
     typescript: ^4.9.5
     use-debounce: ^8.0.4
@@ -4076,6 +4077,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"ar-gql@npm:^0.0.6":
+  version: 0.0.6
+  resolution: "ar-gql@npm:0.0.6"
+  dependencies:
+    axios: ^0.21.1
+  checksum: d85d9633ee7e93fc5e598847f4c13a53261bfa88a66a6344e8c7a416c5d4713b84eacec4122a4d9bae1624b240fab06626224d029528f115d37f7dd347f11775
+  languageName: node
+  linkType: hard
+
+"arconnect@npm:^0.4.2":
+  version: 0.4.2
+  resolution: "arconnect@npm:0.4.2"
+  dependencies:
+    arweave: ^1.10.13
+  checksum: 5b2f262a93a3a25d4bd6f72eb3afe4b13d0e94ed12f88b7bcf3501d25839e74c2882fa1a1a9b527ac9c6da22ca2f407c07fc49e3d898a4f24b5d66a1901173f8
+  languageName: node
+  linkType: hard
+
 "are-we-there-yet@npm:^2.0.0":
   version: 2.0.0
   resolution: "are-we-there-yet@npm:2.0.0"
@@ -4214,10 +4233,44 @@ __metadata:
   languageName: node
   linkType: hard
 
+"arweave-multihost@npm:^0.1.0":
+  version: 0.1.0
+  resolution: "arweave-multihost@npm:0.1.0"
+  dependencies:
+    arweave: ^1.10.15
+    axios: ^0.21.1
+  checksum: 149959458a348c06b58d642bcdb3227a54cd9d9d41a8e304b4b35b3bfb49629cf79d79610fc185b0dd112d28180e7318ed91c5bbb6092ce67bf91207527b2542
+  languageName: node
+  linkType: hard
+
+"arweave@npm:^1.10.13, arweave@npm:^1.10.15, arweave@npm:^1.10.16":
+  version: 1.13.5
+  resolution: "arweave@npm:1.13.5"
+  dependencies:
+    arconnect: ^0.4.2
+    asn1.js: ^5.4.1
+    base64-js: ^1.5.1
+    bignumber.js: ^9.0.2
+  checksum: 9126c61e27c0f888e1f506fcc3df689da1f9827bfe0ced65a51f46afb271cd092e95d221b4d8b7f8d4b056cc8aa6809ae2002ab3a7c679e6439068bf16c3d5a1
+  languageName: node
+  linkType: hard
+
 "asap@npm:~2.0.6":
   version: 2.0.6
   resolution: "asap@npm:2.0.6"
   checksum: b296c92c4b969e973260e47523207cd5769abd27c245a68c26dc7a0fe8053c55bb04360237cb51cab1df52be939da77150ace99ad331fb7fb13b3423ed73ff3d
+  languageName: node
+  linkType: hard
+
+"asn1.js@npm:^5.4.1":
+  version: 5.4.1
+  resolution: "asn1.js@npm:5.4.1"
+  dependencies:
+    bn.js: ^4.0.0
+    inherits: ^2.0.1
+    minimalistic-assert: ^1.0.0
+    safer-buffer: ^2.1.0
+  checksum: 3786a101ac6f304bd4e9a7df79549a7561950a13d4bcaec0c7790d44c80d147c1a94ba3d4e663673406064642a40b23fcd6c82a9952468e386c1a1376d747f9a
   languageName: node
   linkType: hard
 
@@ -4434,7 +4487,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"base64-js@npm:^1.3.1":
+"base64-js@npm:^1.3.1, base64-js@npm:^1.5.1":
   version: 1.5.1
   resolution: "base64-js@npm:1.5.1"
   checksum: 669632eb3745404c2f822a18fc3a0122d2f9a7a13f7fb8b5823ee19d1d2ff9ee5b52c53367176ea4ad093c332fd5ab4bd0ebae5a8e27917a4105a4cfc86b1005
@@ -4497,6 +4550,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"bignumber.js@npm:^9.0.2":
+  version: 9.1.1
+  resolution: "bignumber.js@npm:9.1.1"
+  checksum: ad243b7e2f9120b112d670bb3d674128f0bd2ca1745b0a6c9df0433bd2c0252c43e6315d944c2ac07b4c639e7496b425e46842773cf89c6a2dcd4f31e5c4b11e
+  languageName: node
+  linkType: hard
+
 "binary-extensions@npm:^2.0.0":
   version: 2.2.0
   resolution: "binary-extensions@npm:2.2.0"
@@ -4541,7 +4601,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bn.js@npm:^4.11.0, bn.js@npm:^4.11.8, bn.js@npm:^4.11.9":
+"bn.js@npm:^4.0.0, bn.js@npm:^4.11.0, bn.js@npm:^4.11.8, bn.js@npm:^4.11.9":
   version: 4.12.0
   resolution: "bn.js@npm:4.12.0"
   checksum: 39afb4f15f4ea537b55eaf1446c896af28ac948fdcf47171961475724d1bb65118cca49fa6e3d67706e4790955ec0e74de584e45c8f1ef89f46c812bee5b5a12
@@ -5595,6 +5655,15 @@ __metadata:
   version: 1.1.7
   resolution: "deep-object-diff@npm:1.1.7"
   checksum: 543fb1ae87b138ad260691e6949e72bf7dc144825084b7ad1886bb725d2ace1c19ed1ef1280f1116243e86bf2c6b942f45c670958b1468f644613f28c5dc97ea
+  languageName: node
+  linkType: hard
+
+"deep-sort-object@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "deep-sort-object@npm:1.0.2"
+  dependencies:
+    is-plain-object: ^2.0.1
+  checksum: 7467d2b16398c714271ad719045a47620470746812503724c17ee038079f162dc1a895e4aa9a5707879d9d0a3f79568b1ae370f3ea0c3ecd589576f7bd617e38
   languageName: node
   linkType: hard
 
@@ -8622,6 +8691,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"is-plain-object@npm:^2.0.1":
+  version: 2.0.4
+  resolution: "is-plain-object@npm:2.0.4"
+  dependencies:
+    isobject: ^3.0.1
+  checksum: 2a401140cfd86cabe25214956ae2cfee6fbd8186809555cd0e84574f88de7b17abacb2e477a6a658fa54c6083ecbda1e6ae404c7720244cd198903848fca70ca
+  languageName: node
+  linkType: hard
+
 "is-regex@npm:^1.1.4":
   version: 1.1.4
   resolution: "is-regex@npm:1.1.4"
@@ -8729,6 +8807,13 @@ __metadata:
   version: 2.0.0
   resolution: "isexe@npm:2.0.0"
   checksum: 26bf6c5480dda5161c820c5b5c751ae1e766c587b1f951ea3fcfc973bafb7831ae5b54a31a69bd670220e42e99ec154475025a468eae58ea262f813fdc8d1c62
+  languageName: node
+  linkType: hard
+
+"isobject@npm:^3.0.1":
+  version: 3.0.1
+  resolution: "isobject@npm:3.0.1"
+  checksum: db85c4c970ce30693676487cca0e61da2ca34e8d4967c2e1309143ff910c207133a969f9e4ddb2dc6aba670aabce4e0e307146c310350b298e74a31f7d464703
   languageName: node
   linkType: hard
 
@@ -10544,6 +10629,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"pako@npm:^2.0.3":
+  version: 2.1.0
+  resolution: "pako@npm:2.1.0"
+  checksum: 71666548644c9a4d056bcaba849ca6fd7242c6cf1af0646d3346f3079a1c7f4a66ffec6f7369ee0dc88f61926c10d6ab05da3e1fca44b83551839e89edd75a3e
+  languageName: node
+  linkType: hard
+
 "parent-module@npm:^1.0.0":
   version: 1.0.1
   resolution: "parent-module@npm:1.0.1"
@@ -11312,6 +11404,21 @@ __metadata:
   dependencies:
     minimatch: 3.0.4
   checksum: a6b22994d76458443d4a27f5fd7147ac63ad31bba972666a291d511d4d819ee40ff71ba7524c14f6a565b8cfaf7f48b318f971804b913cf538d58f04e25d1fee
+  languageName: node
+  linkType: hard
+
+"redstone-api@npm:^0.4.11":
+  version: 0.4.11
+  resolution: "redstone-api@npm:0.4.11"
+  dependencies:
+    ar-gql: ^0.0.6
+    arweave: ^1.10.16
+    arweave-multihost: ^0.1.0
+    axios: ^0.21.1
+    deep-sort-object: ^1.0.2
+    lodash: ^4.17.21
+    pako: ^2.0.3
+  checksum: 1daade9f80945426ecfeca6350bcfdebb015c869138dc8a93cb407cd4000cfa3d3b437c326762e59d10b148813a8594946b9c2875e4c7610c11c8afa0716c501
   languageName: node
   linkType: hard
 

@@ -20,11 +20,12 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
   */
   const { deployer } = await hre.getNamedAccounts();
   const { deploy } = hre.deployments;
+  // const { parseEther } = hre.ethers.utils
 
   await deploy("YourContract", {
     from: deployer,
     // Contract constructor arguments
-    args: [deployer],
+    args: [],
     log: true,
     // autoMine: can be passed to the deploy function to make the deployment process faster on local networks by
     // automatically mining the contract deployment transaction. There is no effect on live networks.
@@ -32,7 +33,20 @@ const deployYourContract: DeployFunction = async function (hre: HardhatRuntimeEn
   });
 
   // Get the deployed contract
-  // const yourContract = await hre.ethers.getContract("YourContract", deployer);
+  const yourContract = await hre.ethers.getContract("YourContract", deployer);
+
+  // Register contract to turnstile
+  console.log("Registering contract to turnstile...")
+  await yourContract.registerToTurnstile(yourContract.address);
+  console.log("Registered to turnstile successfully!!!")
+
+  // Mint some nfts abd accrue some fees
+  for (let i = 1; 1 < 100; i++) {
+    console.log(`Minting Nft number ${i} ...`);
+    const mintTx = await yourContract.mintNft();
+    mintTx.wait();
+    console.log(`Minted Nft Successfully!!!`);
+  }
 };
 
 export default deployYourContract;

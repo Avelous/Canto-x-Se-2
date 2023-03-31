@@ -14,8 +14,20 @@ const deployerPrivateKey =
 const etherscanApiKey = process.env.ETHERSCAN_API_KEY || "DNXJA8RX2Q3VZ4URQIWP7Z68CJXQZSC6AW";
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.17",
-  defaultNetwork: "localhost",
+  solidity: {
+    compilers: [
+      {
+        version: "0.8.17",
+        settings: {
+          optimizer: {
+            enabled: true,
+            runs: 200,
+          },
+        },
+      },
+    ],
+  },
+  defaultNetwork: "cantoTestnet",
   namedAccounts: {
     deployer: {
       // By default, it will take the first Hardhat account as the deployer
@@ -73,6 +85,14 @@ const config: HardhatUserConfig = {
     },
     polygonMumbai: {
       url: `https://polygon-mumbai.g.alchemy.com/v2/${providerApiKey}`,
+      accounts: [deployerPrivateKey],
+    },
+    cantoTestnet: {
+      url: `https://canto-testnet.plexnode.wtf`,
+      accounts: [deployerPrivateKey],
+    },
+    cantoMainnet: {
+      url: `https://canto.dexvaults.com`,
       accounts: [deployerPrivateKey],
     },
   },
