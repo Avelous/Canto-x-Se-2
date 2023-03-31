@@ -9,8 +9,8 @@ Built using NextJS, RainbowKit, Hardhat, Redstone, Wagmi and Typescript.
 - ✅ **Contract Component**: Edit and test Solidity smart contracts on your frontend.
 - 🔥 **Burner Wallet & Local Faucet**: Quickly test your application with a burner wallet and local faucet.
 - 🔐 **Integration with Wallet Providers**: Connect to different wallet providers and interact with the Ethereum network.
-- 📜 **Interact with all the Canto contracts through one page locally
-- 🧱 **Custom hooks / components / util function like fetching price from readstone
+- 📜 **Interact with all the Canto contracts through one page locally**
+- 🧱 **Custom hooks / components / util function like fetching price from readstone**
 
 ## Contents
 
