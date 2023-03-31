@@ -19,6 +19,7 @@ Built using NextJS, RainbowKit, Hardhat, Redstone, Wagmi and Typescript.
 ## Contents
 
 - [Requirements](#requirements)
+- [Overview](#Overview)
 - [Quickstart](#Quickstart)
 - [Deploying your Smart Contracts to a Canto Mainnet](#Deploying-your-Smart-Contracts-to-a-live-network)
 - [Deploying your NextJS App](#Deploying-your-NextJS-App)
@@ -34,6 +35,10 @@ Before you begin, you need to install the following tools:
 - [Node (v18 LTS)](https://nodejs.org/en/download/)
 - [Yarn (v1.x)](https://classic.yarnpkg.com/en/docs/install/)
 - [Git](https://git-scm.com/downloads)
+
+## Overview 
+Canto Starter kit is fork of [SE-2](https://github.com/scaffold-eth/se-2) so it has all the power of [SE-2](https://github.com/scaffold-eth/se-2) along with some great addtional tools specific to Canot ecosystem. 
+
 
 ## Quickstart
 
